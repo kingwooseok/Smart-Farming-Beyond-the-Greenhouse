@@ -1,0 +1,9 @@
+build/
+__pycache__/
+*.pyc
+*.elf
+*.hex
+*.o
+.DS_Store
+Thumbs.db
+*.log

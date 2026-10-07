@@ -6,10 +6,9 @@
 
 | 프로젝트 | 내용 |
 |---|---|
-| 수행 | 2025년 2학기 임베디드시스템설계 · 5인 팀 프로젝트 |
 | 하드웨어 | Arduino Uno × 4, CdS 조도센서, Grove 토양수분센서, L9110S, DC 워터펌프 |
 | 펌웨어 | C/C++, TWI, ADC, Timer2 인터럽트, Timer0 PWM, UART |
-| 김우석 담당 | 프로젝트 개요·제어 흐름 설계, TWI 통신 로직, 보고서·발표자료 검토 및 발표 |
+| 김우석 담당 | 프로젝트 개요·제어 흐름 설계, TWI 통신 로직 |
 
 [설계와 구현](docs/design.md) · [시연 결과](docs/demo.md) · [배선·실행 방법](docs/setup.md) · [코드 정리 내역](docs/code-notes.md)
 
@@ -84,7 +83,7 @@ next_pwm = clamp(pwm + gain × error, 0, 254)
 
 ## 담당 업무와 문제 해결
 
-김우석은 개요와 제어 흐름을 구성하고 TWI 통신 로직을 작성했습니다. 센서·관수부를 나누어 개발한 뒤 공통 버스로 통합하고, 보고서·발표자료 검토와 발표를 담당했습니다.
+김우석은 개요와 제어 흐름을 구성하고 TWI 통신 로직을 작성했습니다. 센서·관수부를 나누어 개발한 뒤 공통 버스로 통합했습니다.
 
 - **여러 송신자의 구분:** 페이로드에 송신 노드 ID를 넣고 수신 상태에 따라 ID와 데이터를 나누어 처리했습니다.
 - **통신 상태 처리:** TWI 상태 레지스터에서 ACK·NACK와 중재 상실을 판별해 전송 결과를 처리했습니다.
@@ -94,10 +93,8 @@ next_pwm = clamp(pwm + gain × error, 0, 254)
 
 | 경로 | 내용 |
 |---|---|
-| [`firmware/`](firmware) | 보고서의 4개 노드 구현을 복원·정리한 Arduino 스케치 |
+| [`firmware/`](firmware) | 4개 노드의 Arduino 스케치 |
 | [`docs/`](docs) | 구조, 프로토콜, 제어식, 배선, 시연, 코드 변경 내역 |
-| [`docs/reference/report.pdf`](docs/reference/report.pdf) | 2025년 제출 보고서의 공개용 사본 |
-| [`docs/reference/presentation.pdf`](docs/reference/presentation.pdf) | 2025년 최종 발표자료의 공개용 사본 |
 | [`assets/`](assets) | 회로도, 실제 장치 사진, 시연 화면 |
 | [`archive/`](archive) | 별도 파일로 남아 있던 초기 TWI 송신 스케치 |
 | [`tools/build.py`](tools/build.py) · [`tests/`](tests) | AVR 빌드 및 제어식·타이머 경계값 검사 |
