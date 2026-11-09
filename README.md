@@ -78,8 +78,6 @@ next_pwm = clamp(pwm + gain × error, 0, 254)
 | 흙의 양에 비해 관수량이 많음 | 음의 오차를 반영해 다음 PWM 감소 |
 | 흙의 양에 비해 관수량이 적음 | 양의 오차를 반영해 다음 PWM 증가 |
 
-![급수 후 수분 변화와 다음 PWM 갱신을 확인한 시연 화면](assets/demo-feedback.png)
-
 [5가지 시연의 조건·사진·영상 보기](docs/demo.md)
 
 ## 코드와 자료
